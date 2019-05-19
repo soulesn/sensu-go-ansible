@@ -92,6 +92,6 @@
       with_items: "{{ test_results.results }}"
 
     - name: Execute all custom module test plays
-      include_tasks: "{{ item }}"
-      with_fileglob:
-        - "{{ playbook_dir }}/modules/*/main.yml"
+      include_tasks: "{{ item.src }}"
+      with_filetree: "{{ playbook_dir }}/modules/*/main.yml"
+      when: item.state == 'file'
