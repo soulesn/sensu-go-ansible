@@ -3,7 +3,7 @@
   service:
     name: sensu-backend
     state: restarted
-  notify: wait for sensu-backend to accept connections
+  notify: Wait for sensu-backend to accept connections
   when: sensu_go_final_services.backend.state != 'stopped'
 
 - name: Wait for sensu-backend to accept connections
