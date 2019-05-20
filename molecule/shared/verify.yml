@@ -95,4 +95,3 @@
       include_tasks: "{{ item }}"
       with_fileglob:
         - "{{ playbook_dir }}/modules/*.yml"
-      when: item.state == 'file'
